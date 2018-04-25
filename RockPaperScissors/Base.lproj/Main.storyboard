@@ -76,29 +76,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-hM-4Yw">
-                                <rect key="frame" x="160" y="488" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-nD-kPd">
+                                <rect key="frame" x="67.5" y="269.5" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="7lf-ph-8er"/>
+                                    <constraint firstAttribute="height" constant="128" id="bY6-vL-VNj"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="The winner" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCE-lW-Cxq" userLabel="Result">
+                                <rect key="frame" x="103" y="398" width="168" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="168" id="9T7-nr-nfB"/>
+                                    <constraint firstAttribute="height" constant="67" id="nq2-zd-UwK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-hM-4Yw">
+                                <rect key="frame" x="160" y="473" width="54" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QVF-Mp-fxv"/>
+                                    <constraint firstAttribute="width" constant="54" id="z9x-AE-Gsa"/>
+                                </constraints>
                                 <state key="normal" title="Dismiss"/>
                                 <connections>
                                     <action selector="goBack" destination="Yko-sq-Zpf" eventType="touchUpInside" id="77D-Id-tDh"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-nD-kPd">
-                                <rect key="frame" x="67" y="104" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9wc-nD-kPd" firstAttribute="centerX" secondItem="do2-tg-wb9" secondAttribute="centerX" id="KVB-oj-DTR"/>
+                            <constraint firstItem="fCE-lW-Cxq" firstAttribute="top" secondItem="9wc-nD-kPd" secondAttribute="bottom" constant="0.5" id="VHU-gg-Lk8"/>
+                            <constraint firstItem="9wc-nD-kPd" firstAttribute="centerY" secondItem="do2-tg-wb9" secondAttribute="centerY" id="Yvf-7K-naz"/>
+                            <constraint firstItem="fVE-hM-4Yw" firstAttribute="top" secondItem="fCE-lW-Cxq" secondAttribute="bottom" constant="8" id="j80-1d-8FR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yvj-dp-KjT"/>
                     </view>
                     <connections>
                         <outlet property="playerMove" destination="9wc-nD-kPd" id="YY4-G6-P6X"/>
+                        <outlet property="result" destination="fCE-lW-Cxq" id="eFG-sM-5x6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FYh-YJ-1OY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1468" y="34"/>
+            <point key="canvasLocation" x="912.79999999999995" y="42.728635682158924"/>
         </scene>
     </scenes>
 </document>
