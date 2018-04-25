@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Choices View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ChoicesViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ots-58-DuU" userLabel="Paper">
+                                <rect key="frame" x="167.5" y="318.5" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="P9i-2K-ezd"/>
+                                    <constraint firstAttribute="height" constant="30" id="sj6-OV-V42"/>
+                                </constraints>
+                                <state key="normal" title="Paper"/>
+                                <connections>
+                                    <action selector="paperButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hR9-bI-opA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHV-Pg-UuK">
+                                <rect key="frame" x="124" y="398" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5II-Ux-F2d"/>
+                                    <constraint firstAttribute="width" constant="35" id="saM-DU-Noj"/>
+                                </constraints>
+                                <state key="normal" title="Rock"/>
+                                <connections>
+                                    <action selector="rockButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QM5-7n-a1G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpV-YQ-4ga" userLabel="Scissors">
+                                <rect key="frame" x="209" y="398" width="58" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3hW-0u-j7F"/>
+                                    <constraint firstAttribute="width" constant="58" id="Mct-Ct-miw"/>
+                                </constraints>
+                                <state key="normal" title="Scissors"/>
+                                <connections>
+                                    <segue destination="Yko-sq-Zpf" kind="presentation" identifier="playGame" id="zkZ-F1-99x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MpV-YQ-4ga" firstAttribute="leading" secondItem="Ots-58-DuU" secondAttribute="trailing" constant="1.5" id="2ek-5s-gOS"/>
+                            <constraint firstItem="Ots-58-DuU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7e6-YW-sXB"/>
+                            <constraint firstItem="Ots-58-DuU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KJc-9Z-zm6"/>
+                            <constraint firstItem="OHV-Pg-UuK" firstAttribute="top" secondItem="Ots-58-DuU" secondAttribute="bottom" constant="49.5" id="WfE-f2-9zl"/>
+                            <constraint firstItem="Ots-58-DuU" firstAttribute="leading" secondItem="OHV-Pg-UuK" secondAttribute="trailing" constant="8.5" id="g9j-QA-3aS"/>
+                            <constraint firstItem="MpV-YQ-4ga" firstAttribute="top" secondItem="Ots-58-DuU" secondAttribute="bottom" constant="49.5" id="wyY-Rg-oHO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="32.833583208395808"/>
+        </scene>
+        <!--Results View Controller-->
+        <scene sceneID="NlH-7a-Wft">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="Yko-sq-Zpf" customClass="ResultsViewController" customModule="RockPaperScissors" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="do2-tg-wb9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-hM-4Yw">
+                                <rect key="frame" x="160" y="488" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Dismiss"/>
+                                <connections>
+                                    <action selector="goBack" destination="Yko-sq-Zpf" eventType="touchUpInside" id="77D-Id-tDh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9wc-nD-kPd">
+                                <rect key="frame" x="67" y="104" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yvj-dp-KjT"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerMove" destination="9wc-nD-kPd" id="YY4-G6-P6X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FYh-YJ-1OY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1468" y="34"/>
+        </scene>
+    </scenes>
+</document>
