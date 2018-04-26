@@ -26,7 +26,8 @@ class ChoicesViewController: UIViewController {
         
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
         
-        controller.userChoice = getUserChoice(sender) //sender can't be any, needs to be a UIButton here.
+        controller.userChoice = getUserChoice(sender)
+        //sender can't be any, needs to be a UIButton here.
         print(getUserChoice(sender))
         
         present(controller, animated: true, completion: nil)
@@ -44,7 +45,6 @@ class ChoicesViewController: UIViewController {
             let controller = segue.destination as! ResultsViewController
             
             controller.userChoice = getUserChoice(sender as! UIButton)
-            print(getUserChoice(sender as! UIButton))
         }
 
     }

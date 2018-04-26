@@ -58,11 +58,11 @@
 			children = (
 				ED5969F5208DDCC3007154F3 /* AppDelegate.swift */,
 				ED5969F7208DDCC3007154F3 /* ChoicesViewController.swift */,
+				ED596A07208DDD98007154F3 /* ResultsViewController.swift */,
 				ED5969F9208DDCC3007154F3 /* Main.storyboard */,
 				ED5969FC208DDCC4007154F3 /* Assets.xcassets */,
 				ED5969FE208DDCC4007154F3 /* LaunchScreen.storyboard */,
 				ED596A01208DDCC4007154F3 /* Info.plist */,
-				ED596A07208DDD98007154F3 /* ResultsViewController.swift */,
 			);
 			path = RockPaperScissors;
 			sourceTree = "<group>";

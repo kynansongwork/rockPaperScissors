@@ -83,8 +83,8 @@
                                     <constraint firstAttribute="height" constant="128" id="bY6-vL-VNj"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="The winner" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCE-lW-Cxq" userLabel="Result">
-                                <rect key="frame" x="103" y="398" width="168" height="67"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The winner" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCE-lW-Cxq" userLabel="Result">
+                                <rect key="frame" x="103.5" y="398" width="168" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="168" id="9T7-nr-nfB"/>
                                     <constraint firstAttribute="height" constant="67" id="nq2-zd-UwK"/>
@@ -93,8 +93,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-hM-4Yw">
-                                <rect key="frame" x="160" y="473" width="54" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVE-hM-4Yw">
+                                <rect key="frame" x="160.5" y="473" width="54" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="QVF-Mp-fxv"/>
                                     <constraint firstAttribute="width" constant="54" id="z9x-AE-Gsa"/>
@@ -104,17 +104,29 @@
                                     <action selector="goBack" destination="Yko-sq-Zpf" eventType="touchUpInside" id="77D-Id-tDh"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tBD-RC-ebp" userLabel="Opponent Move">
+                                <rect key="frame" x="127" y="189" width="121" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="121" id="Dpw-J4-nlZ"/>
+                                    <constraint firstAttribute="height" constant="72" id="Rdr-5e-l0E"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="fCE-lW-Cxq" firstAttribute="centerX" secondItem="do2-tg-wb9" secondAttribute="centerX" id="Eg9-5B-3vB"/>
+                            <constraint firstItem="tBD-RC-ebp" firstAttribute="centerX" secondItem="do2-tg-wb9" secondAttribute="centerX" id="Is9-D6-9Hf"/>
                             <constraint firstItem="9wc-nD-kPd" firstAttribute="centerX" secondItem="do2-tg-wb9" secondAttribute="centerX" id="KVB-oj-DTR"/>
+                            <constraint firstItem="9wc-nD-kPd" firstAttribute="top" secondItem="tBD-RC-ebp" secondAttribute="bottom" constant="8.5" id="Tk3-wd-GsX"/>
                             <constraint firstItem="fCE-lW-Cxq" firstAttribute="top" secondItem="9wc-nD-kPd" secondAttribute="bottom" constant="0.5" id="VHU-gg-Lk8"/>
                             <constraint firstItem="9wc-nD-kPd" firstAttribute="centerY" secondItem="do2-tg-wb9" secondAttribute="centerY" id="Yvf-7K-naz"/>
+                            <constraint firstItem="fVE-hM-4Yw" firstAttribute="centerX" secondItem="do2-tg-wb9" secondAttribute="centerX" id="ZwO-i7-acO"/>
                             <constraint firstItem="fVE-hM-4Yw" firstAttribute="top" secondItem="fCE-lW-Cxq" secondAttribute="bottom" constant="8" id="j80-1d-8FR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yvj-dp-KjT"/>
                     </view>
                     <connections>
+                        <outlet property="opponentMove" destination="tBD-RC-ebp" id="N9L-9B-7k6"/>
                         <outlet property="playerMove" destination="9wc-nD-kPd" id="YY4-G6-P6X"/>
                         <outlet property="result" destination="fCE-lW-Cxq" id="eFG-sM-5x6"/>
                     </connections>

@@ -22,13 +22,13 @@ enum Weapon: String {
         return Weapon(rawValue: weapons[pick])!
         //returns enum value based on item from weapons array.
     }
-    
 }
 
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var playerMove: UIImageView!
     @IBOutlet weak var result: UILabel!
+    @IBOutlet weak var opponentMove: UIImageView!
     
     var userChoice: Weapon!
     var computerMove: Weapon = Weapon.computerChoice()
@@ -36,7 +36,7 @@ class ResultsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        displayPlayerResult()
+//        displayPlayerResult()
         gameResult()
         print("computer: \(computerMove)")
     }
@@ -45,28 +45,49 @@ class ResultsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func displayPlayerResult() {
-        if userChoice == .Rock {
-            playerMove.image = UIImage(named: "rock")
-        } else if userChoice == .Scissors {
-            playerMove.image = UIImage(named: "scissors")
-        } else if userChoice == .Paper {
-            playerMove.image = UIImage(named: "paper")
-        }
-    }
+//    func displayPlayerResult() {
+//        if userChoice == .Rock {
+//            playerMove.image = UIImage(named: "Rock")
+//        } else if userChoice == .Scissors {
+//            playerMove.image = UIImage(named: "Scissors")
+//        } else if userChoice == .Paper {
+//            playerMove.image = UIImage(named: "Paper")
+//        }
+//    }
+    
+//    func gameResult() {
+//        if (userChoice == computerMove) {
+//            result.text = "draw"
+//        } else if (userChoice == .Rock && computerMove != .Paper) {
+//            result.text = "Rock beats \(computerMove)"
+//        } else if (userChoice == .Paper && computerMove != .Scissors) {
+//            result.text = "Paper beats \(computerMove)"
+//        } else if (userChoice == .Scissors && computerMove != .Rock) {
+//            result.text = "Scissors beats \(computerMove)"
+//        } else {
+//            result.text = "You lose to \(computerMove)"
+//        }
+//        
+//    }
+    
+    //writing it as a switch case, based on solution.
     
     func gameResult() {
-        if (userChoice == computerMove) {
-            result.text = "draw"
-        } else if (userChoice == .Rock && computerMove != .Paper) {
-            result.text = "Rock beats \(computerMove)"
-        } else if (userChoice == .Paper && computerMove != .Scissors) {
-            result.text = "Paper beats \(computerMove)"
-        } else if (userChoice == .Scissors && computerMove != .Rock) {
-            result.text = "Scissors beats \(computerMove)"
-        } else {
-            result.text = "You lose to \(computerMove)"
+        switch (userChoice!, computerMove) {
+        case let (user, computer) where user == computer:
+            result.text = "It is a draw"
+            playerMove.image = UIImage(named: userChoice.rawValue)
+            opponentMove.image = UIImage(named: computerMove.rawValue)
+        case (.Rock, .Scissors), (.Paper, .Rock), (.Scissors, .Paper): //Laying out all the different win cases.
+            result.text = "Well done, \(userChoice.rawValue) beats \(computerMove.rawValue)."
+            playerMove.image = UIImage(named: userChoice.rawValue)
+            opponentMove.image = UIImage(named: computerMove.rawValue)
+        default:
+            result.text = "You lose, \(computerMove.rawValue) beats \(userChoice.rawValue)."
+            playerMove.image = UIImage(named: userChoice.rawValue)
+            opponentMove.image = UIImage(named: computerMove.rawValue)
         }
+        
         
     }
     
