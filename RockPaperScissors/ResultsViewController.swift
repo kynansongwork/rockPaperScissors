@@ -42,7 +42,10 @@ class ResultsViewController: UIViewController {
     }
     
     @IBAction func goBack() {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
+        if let navigationController = navigationController {
+            navigationController.popToRootViewController(animated: true)
+        }
     }
     
 //    func displayPlayerResult() {

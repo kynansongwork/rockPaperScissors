@@ -29,9 +29,12 @@ class ChoicesViewController: UIViewController {
         controller.userChoice = getUserChoice(sender)
         //sender can't be any, needs to be a UIButton here.
         print(getUserChoice(sender))
+        self.navigationController?.pushViewController(controller, animated: true)
+        //This line calls the navigation controller, pushViewController is the function to show the next view.
         
-        present(controller, animated: true, completion: nil)
+//        present(controller, animated: true, completion: nil)
     }
+
     
     //Code and segue
     
